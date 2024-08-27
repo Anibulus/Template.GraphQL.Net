@@ -1,0 +1,1 @@
+dotnet ef database update --project Template.Infrastructure --startup-project Template.Api

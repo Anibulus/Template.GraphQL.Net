@@ -1,0 +1,1 @@
+dotnet ef migrations add $1 --project Template.Infrastructure --startup-project Template.Api

@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json.schemastore.org/template",
+    "author": "Anibulus, Luis Preza",
+    "identity": "graphql",
+    "name": "Graphql API",
+    "shortName": "graphql-api",
+    "description": "An api made in graphql, pretty usefull to create an scalable backend pretty fast.",
+    "classifications":[
+        "Web",
+        "Api",
+        "GraphQL"
+    ],
+    "sourceName": "template",
+    "preferNameDirectory": false,
+    "tags": {
+        "language": "C#",
+        "type":"project"
+    }
+}

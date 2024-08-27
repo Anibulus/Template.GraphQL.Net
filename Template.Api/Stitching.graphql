@@ -1,0 +1,3 @@
+﻿#extend type Member {
+#  addresses: [Address] @delegate(path:"listAddresses(id: $fields:id)")
+#}
