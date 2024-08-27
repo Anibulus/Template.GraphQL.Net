@@ -1,20 +1,19 @@
-﻿namespace Template.Core.Entities
-{
-    public abstract class BaseEntity
+﻿namespace Template.Core.Entities;
+
+public abstract class BaseEntity
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public Guid Id { get; set; }
+    [Key]
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public Guid Id { get; set; }
 
-        public DateTime CreatedAt { get; set; }
-        public DateTime UpdatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
+    public DateTime UpdatedAt { get; set; }
 
-        public BaseEntity()
-        {
-            this.CreatedAt = DateTime.UtcNow;
-            this.UpdatedAt = DateTime.UtcNow;
-           
-        }
-
+    public BaseEntity()
+    {
+        this.CreatedAt = DateTime.UtcNow;
+        this.UpdatedAt = DateTime.UtcNow;
+        
     }
+
 }

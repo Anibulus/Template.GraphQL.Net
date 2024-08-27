@@ -1,5 +1,4 @@
-﻿
-namespace Template.Infrastructure.Services
+﻿namespace Template.Infrastructure.Services
 {
     public class SecurityHelper
     {
@@ -17,13 +16,12 @@ namespace Template.Infrastructure.Services
         {
             var saltBytes = Convert.FromBase64String(salt);
 
-            using (var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, saltBytes, nIterations))
+            using (
+                var rfc2898DeriveBytes = new Rfc2898DeriveBytes(password, saltBytes, nIterations)
+            )
             {
                 return Convert.ToBase64String(rfc2898DeriveBytes.GetBytes(nHash));
             }
         }
-
-        
     }
-
 }

@@ -1,7 +1,13 @@
 # GraphQL Template Api
 
-You can see how to do a template in .Net with this [link](https://learn.microsoft.com/en-us/dotnet/core/tools/custom-templates)
+You can see how to do a template with .Net in [Microsoft:Custom Templates](https://learn.microsoft.com/en-us/dotnet/core/tools/custom-templates)
 
+So you could create a template in the same way as:
+```bash
+dotnet new install Microsoft.Azure.WebJobs.ProjectTemplates
+```
+
+So you need to run the next steps:
 Install this template:
 ```bash
 dotnet new install .
@@ -14,7 +20,7 @@ dotnet new update .
 
 To create a project with this template, use:
 ```bash
-dotnet new msgql --db Product -n Product
+dotnet new graphql-api -n Product
 ```
 
 Install EF
@@ -33,13 +39,4 @@ DB_PORT=5432
 DATABASE_USER=user-template
 
 DATABASE_PASSWORD=t3mpl4t3
-```
-
-
- Boiler plate of hot chocolate with graphql. With this project, you are able to make many projects with the same structure
-Topics
-graphql template boilerplate csharp backend dotnet-core backend-api
-
-```
-dotnet pack --output nupkgs
 ```

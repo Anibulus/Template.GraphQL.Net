@@ -1,18 +1,20 @@
-﻿namespace Template.Api.GraphQL.Queries
+﻿namespace Template.Api.GraphQL.Queries;
+
+[ExtendObjectType(OperationTypeNames.Query)]
+public class Global
 {
-    [ExtendObjectType(OperationTypeNames.Query)]
-    public class Global
+    //[Authorize]
+    [UseProjection]
+    public async Task<Template.Core.Entities.Template> GetTemplate(
+        //ClaimsPrincipal claimsPrincipal,
+        //[Service] ITemplateService _templateService,
+        TemplateContext context
+    )
     {
-        //[Authorize]
-        //[UseProjection]
-        //public Task<Member> GetMe(ClaimsPrincipal claimsPrincipal, [Service] IMemberService _memberService, TemplateContext context)
-        //{
         //var userIdStr = claimsPrincipal.FindFirstValue(ClaimTypes.NameIdentifier);
+        //Validate your stuff
+        var result = new Template.Core.Entities.Template();
 
-        //var user = _memberService.GetMe(userIdStr);
-
-        //    return user;
-        //}
-
+        return result;
     }
 }

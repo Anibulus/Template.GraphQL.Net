@@ -6,15 +6,14 @@ namespace Template.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly TemplateContext _context;
-        // private readonly IMemberRepository _memberRepository;
-        // private readonly ICountryRepository _countryRepository;
+        // private readonly ITemplateRepository _TemplateRepository;
 
         public UnitOfWork(TemplateContext context)
         {
             _context = context;
         }
 
-        // public IMemberRepository MemberRepository => _memberRepository ?? new MemberRepository(_context);
+        // public ITemplateRepository TemplateRepository => _TemplateRepository ?? new MemberRepository(_context);
 
         // public ICountryRepository CountryRepository => _countryRepository ?? new CountryRepository(_context);
 

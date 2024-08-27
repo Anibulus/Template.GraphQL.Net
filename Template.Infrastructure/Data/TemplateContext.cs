@@ -9,7 +9,7 @@ namespace Template.Infrastructure.Data
 {
     public class TemplateContext : DbContext
     {
-        // public  DbSet<Currency> Currencies { get; set; }
+        public  DbSet<Template.Core.Entities.Template> Templates { get; set; }
 
         public TemplateContext(){}
 

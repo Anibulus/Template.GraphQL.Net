@@ -3,15 +3,15 @@
     "author": "Anibulus, Luis Preza",
     "identity": "graphql",
     "name": "Graphql API",
-    "shortName": "graphql-api",
+    "shortName": "graphqlapi",
     "description": "An api made in graphql, pretty usefull to create an scalable backend pretty fast.",
     "classifications":[
         "Web",
         "Api",
         "GraphQL"
     ],
-    "sourceName": "template",
-    "preferNameDirectory": false,
+    "sourceName": "Template",
+    "preferNameDirectory": true,
     "tags": {
         "language": "C#",
         "type":"project"
