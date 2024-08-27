@@ -19,9 +19,9 @@ namespace Template.Infrastructure.Repositories
             return _entities.AsEnumerable();
         }
 
-        public async Task<T> GetById(Guid id)
+        public async Task<T?> GetById(Guid id)
         {
-            return await _entities.FindAsync(id);
+            return await _entities.SingleOrDefaultAsync(x=>x.Id == id);
         }
 
         public async Task Add(T entity)

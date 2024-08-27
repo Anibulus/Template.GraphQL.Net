@@ -1,6 +1,5 @@
-
-using HotChocolate.AspNetCore.Authorization;
 using System.Security.Claims;
+using HotChocolate.Authorization;
 
 namespace Template.Api.GraphQL.Mutations;
 
@@ -11,7 +10,7 @@ public record TemplatePayload(Template.Core.Entities.Template Template);
 [ExtendObjectType(OperationTypeNames.Mutation)]
 public class CreateTemplateMutation
 {
-    [Authorize]
+    //[Authorize]
     public async Task<TemplatePayload> CreateTemplate(
         TemplateInput input, 
         TemplateContext context

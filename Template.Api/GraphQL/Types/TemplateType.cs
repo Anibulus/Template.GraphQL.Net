@@ -8,15 +8,17 @@ public class TemplateType : ObjectType<Template.Core.Entities.Template>
     {
         descriptor
             .Field(st => st.Childs)
-            .ResolveWith<TemplateTypeResolver>(x => x.GetServiceTemplate(default!, default!))
-            .UseDbContext<TemplateContext>();
+            .ResolveWith<TemplateTypeResolver>(x => x.GetServiceTemplate(default!, default!));
+            //.UseDbContext<TemplateContext>();
     }
 
     private class TemplateTypeResolver
     {
         public IQueryable<Template.Core.Entities.Template> GetServiceTemplate(
-            [Parent] Template.Core.Entities.Template Template,
-            [ScopedService] TemplateContext context
+            [Parent]
+            Template.Core.Entities.Template Template,
+            [Service]
+            TemplateContext context
         )
         {
             return context.Templates.Where(x => x.TemplateId == Template.Id);

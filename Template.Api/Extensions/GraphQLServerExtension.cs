@@ -2,10 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using HotChocolate;
+using HotChocolate.AspNetCore;
+using HotChocolate.AspNetCore.Serialization;
+using HotChocolate.Execution.Configuration;
+using HotChocolate.Stitching;
 using HotChocolate.Data.Filters.Expressions;
 using Template.Api.GraphQL.Filter;
 using Template.Api.GraphQL.Types;
 using Template.Api.GraphQL.Mutations;
+using HotChocolate.Data.Filters;
 
 namespace Template.Api.Extensions;
 
@@ -23,12 +29,11 @@ public static class GraphQLServerExtension
             .AddType<TemplateType>()
             .AddMutationType()
             .AddTypeExtension<CreateTemplateMutation>()
-            .ConfigureResolverCompiler(c => c.AddService<TemplateContext>())
             //Tools
             .AddFiltering()
             .AddSorting()
             .AddProjections()
-            .AddAuthorization()
+            .AddAuthorizationCore()
             //Settings
             .AddConvention<IFilterConvention>(new FilterConvention(x => x.AddDefaults()))
             .AddConvention<IFilterConvention>(
@@ -47,6 +52,7 @@ public static class GraphQLServerExtension
                 )
             )
             //Addition
+            .InitializeOnStartup()
             .PublishSchemaDefinition(c =>
                 c.SetName("Template").AddTypeExtensionsFromFile("./Stitching.graphql")
             );
